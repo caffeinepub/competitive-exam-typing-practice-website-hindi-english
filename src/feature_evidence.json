@@ -1,0 +1,130 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-create-a-responsive-typing-practice-interface-that-supports-both-english-and-hindi-modes-with-a-competitive-exam-style-layout-passage-area-typing-input-timer-live-stats",
+      "featureTitle": "Create a responsive typing-practice interface that supports both English and Hindi modes, with a competitive-exam style layout (passage area, typing input, timer, live stats).",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/features/typing/TypingPractice.tsx",
+        "frontend/src/features/typing/components/PassageDisplay.tsx",
+        "frontend/src/features/typing/components/StatsBar.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-the-typing-test-engine-on-the-frontend-start-pause-reset-flow-countdown-durations-e-g-1-3-5-10-minutes-character-by-character-comparison-against-the-target-passage-and-a-results-screen-after-time-ends",
+      "featureTitle": "Implement the typing-test engine on the frontend: start/pause/reset flow, countdown durations (e.g., 1/3/5/10 minutes), character-by-character comparison against the target passage, and a results screen after time ends.",
+      "files": [
+        "frontend/src/features/typing/TypingPractice.tsx",
+        "frontend/src/features/typing/components/DurationSelector.tsx",
+        "frontend/src/features/typing/components/ResultsSummary.tsx",
+        "frontend/src/features/typing/useTypingEngine.ts"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-hindi-typing-support-with-devanagari-text-passages-and-correct-evaluation-for-unicode-characters-provide-clear-on-screen-guidance-for-how-to-type-hindi-e-g-use-a-devanagari-keyboard-ime-and-ensure-the-comparison-logic-handles-multi-byte-characters-correctly",
+      "featureTitle": "Add Hindi typing support with Devanagari text passages and correct evaluation for Unicode characters; provide clear on-screen guidance for how to type Hindi (e.g., use a Devanagari keyboard/IME) and ensure the comparison logic handles multi-byte characters correctly.",
+      "files": [
+        "frontend/src/features/typing/TypingPractice.tsx",
+        "frontend/src/features/typing/components/PassageDisplay.tsx",
+        "frontend/src/features/typing/unicode.ts",
+        "frontend/src/features/typing/useTypingEngine.ts"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-3"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-provide-a-small-built-in-passage-library-for-both-english-and-hindi-and-a-way-to-fetch-select-passages-for-practice-random-by-language-at-minimum",
+      "featureTitle": "Provide a small built-in passage library for both English and Hindi and a way to fetch/select passages for practice (random by language at minimum).",
+      "files": [
+        "frontend/src/features/typing/TypingPractice.tsx",
+        "frontend/src/features/typing/usePassage.ts",
+        "frontend/src/services/passages.ts"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-4"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-a-coherent-visual-theme-and-design-system-for-the-app-colors-typography-spacing-components-suitable-for-an-exam-practice-environment-avoid-blue-purple-as-primary-colors",
+      "featureTitle": "Add a coherent visual theme and design system for the app (colors, typography, spacing, components) suitable for an exam/practice environment; avoid blue/purple as primary colors.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/features/typing/TypingPractice.tsx",
+        "frontend/src/index.css"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-6"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-an-optional-on-screen-results-history-section-that-shows-recent-attempts-by-language-with-key-stats-using-react-query-for-data-fetching-and-caching",
+      "featureTitle": "Add an optional on-screen results/history section that shows recent attempts by language with key stats, using React Query for data fetching and caching.",
+      "files": [
+        "frontend/src/features/history/HistoryPanel.tsx",
+        "frontend/src/features/history/historyStore.ts",
+        "frontend/src/features/history/useHistory.ts",
+        "frontend/src/features/typing/TypingPractice.tsx",
+        "frontend/src/services/sessions.ts"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-7"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

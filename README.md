@@ -1,2 +1,3 @@
-# competitive-exam-typing-practice-website-hindi-english
-Exported from Caffeine project: Competitive-exam typing practice website (Hindi + English)
+## Competitive-exam typing practice website (Hindi + English)
+
+To run app build and run docker image: `docker build -t app . docker run -it --network host app`

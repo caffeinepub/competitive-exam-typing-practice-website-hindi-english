@@ -1,0 +1,19 @@
+{
+  "frontend/src/index.css": "Global styles with OKLCH color system featuring warm amber/neutral palette for exam-friendly aesthetics, including custom utility classes for character highlighting (correct/incorrect/current/untyped).",
+  "frontend/src/App.tsx": "Main application shell with header (logo, branding), TypingPractice component, and footer with attribution link including UTM tracking.",
+  "frontend/src/features/typing/TypingPractice.tsx": "Primary typing practice interface orchestrating language selection, duration picker, passage display, input area, stats, results, and history panel with backend integration.",
+  "frontend/src/features/typing/useTypingEngine.ts": "Custom hook managing typing test lifecycle (ready/running/finished states), countdown timer, input handling, and real-time stats calculation (WPM, accuracy, errors) with Unicode-safe comparison.",
+  "frontend/src/features/typing/unicode.ts": "Unicode-safe text segmentation utilities using Intl.Segmenter for proper grapheme handling in English and Hindi (Devanagari) with fallback to Array.from.",
+  "frontend/src/features/typing/usePassage.ts": "React Query hook for fetching passages by language from backend and selecting a random passage with refetch support.",
+  "frontend/src/features/typing/components/DurationSelector.tsx": "Toggle group component for selecting test duration (1, 3, 5, 10 minutes) with clock icon and accessible labels.",
+  "frontend/src/features/typing/components/PassageDisplay.tsx": "Passage renderer with character-by-character highlighting (correct/incorrect/untyped/current) supporting both English monospace and Hindi Devanagari fonts.",
+  "frontend/src/features/typing/components/StatsBar.tsx": "Live statistics display showing time remaining, WPM, accuracy percentage, and error count in a responsive grid layout.",
+  "frontend/src/features/typing/components/ResultsSummary.tsx": "Test completion summary card displaying performance level badge, final stats (WPM, accuracy, errors), language, and duration.",
+  "frontend/src/features/history/historyStore.ts": "LocalStorage-based history persistence utilities for storing up to 20 recent typing test results with add/get/clear operations.",
+  "frontend/src/features/history/useHistory.ts": "React Query hook for managing typing test history with optimistic updates and cache invalidation.",
+  "frontend/src/features/history/HistoryPanel.tsx": "History list component displaying recent test results with language, duration, WPM, accuracy, and relative timestamps in a card layout.",
+  "frontend/src/services/passages.ts": "Service layer for fetching passages by language from backend canister with actor caching.",
+  "frontend/src/services/sessions.ts": "Service layer for recording completed typing sessions to backend canister with error handling.",
+  "frontend/src/hooks/useQueries.ts": "Placeholder file as feature-specific React Query hooks are implemented in their respective feature directories.",
+  "frontend/tailwind.config.js": "Tailwind configuration extending theme with custom colors (success/warning), Inter font family, and maintaining all shadcn/ui design tokens."
+}

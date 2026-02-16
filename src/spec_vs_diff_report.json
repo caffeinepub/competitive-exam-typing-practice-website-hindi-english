@@ -1,0 +1,106 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-15T03:18:30.709Z",
+  "summary": "The diff implements a typing-practice UI with language/duration selection, Unicode-safe character comparison/highlighting, local history via React Query, and a Motoko backend with a minimal passage list and a session recording method. However, several required backend APIs/fields and some typing-engine behaviors are missing or incomplete, and Internet Identity support was added despite being a stated non-goal.",
+  "missing_requirements": [
+    {
+      "id": "REQ-2",
+      "requirement": "Implement start/pause/reset flow for the typing-test engine.",
+      "reason": "The typing engine exposes start/reset/retry but no pause/resume state or API is present in the diff summary.",
+      "evidence": [
+        "frontend/src/features/typing/useTypingEngine.ts"
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "requirement": "Show a results screen that includes WPM plus gross WPM or CPM, accuracy %, and total mistakes.",
+      "reason": "The engine computes CPM, but the results UI displays only WPM, Accuracy, and Errors; CPM (or gross WPM) is not shown.",
+      "evidence": [
+        "frontend/src/features/typing/useTypingEngine.ts",
+        "frontend/src/features/typing/components/ResultsSummary.tsx"
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "requirement": "UI includes a short English help note explaining that Hindi input requires a Devanagari keyboard/IME.",
+      "reason": "The diff shows imports that suggest an info alert may exist, but the provided (truncated) TypingPractice content does not include any explicit Hindi-IME guidance text, and no other file contains such copy.",
+      "evidence": [
+        "frontend/src/features/typing/TypingPractice.tsx (truncated)"
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "requirement": "Backend exposes a method to return a random passage for a given language (English/Hindi).",
+      "reason": "Backend only exposes getPassagesByLanguage(language) returning an array; no random-passage method is implemented.",
+      "evidence": [
+        "backend/main.mo"
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "requirement": "Backend exposes a method to submit a completed test result including language, duration, WPM/accuracy, timestamp (anonymous).",
+      "reason": "recordSession accepts a Session containing passage and a result with only timeTaken and accuracy; it does not include WPM, duration, or timestamp as required.",
+      "evidence": [
+        "backend/main.mo",
+        "frontend/src/features/typing/TypingPractice.tsx (truncated)",
+        "frontend/src/services/sessions.ts"
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "requirement": "Backend exposes a method to retrieve recent results (e.g., last N) for display on the frontend.",
+      "reason": "No backend method exists to list recent sessions/results; only recordSession and getPassagesByLanguage are present.",
+      "evidence": [
+        "backend/main.mo"
+      ]
+    }
+  ],
+  "hallucinated_features": [
+    {
+      "description": "Internet Identity authentication/provider and identity-aware actor creation logic.",
+      "reason": "The BuildRequest explicitly lists Internet Identity login as a non-goal, but the diff adds a full Internet Identity provider/hook and uses it in the app root and actor hook.",
+      "evidence": [
+        "frontend/src/main.tsx",
+        "frontend/src/hooks/useInternetIdentity.ts (truncated)",
+        "frontend/src/hooks/useActor.ts"
+      ]
+    },
+    {
+      "description": "Footer promotional link to caffeine.ai with UTM parameters.",
+      "reason": "Not requested in any requirement; adds extra outbound link/content.",
+      "evidence": [
+        "frontend/src/App.tsx"
+      ]
+    }
+  ],
+  "confidence": 0.74,
+  "changed_files": [
+    "all_files_summary.json",
+    "backend/main.mo",
+    "frontend-file-summaries.txt",
+    "frontend/index.css",
+    "frontend/index.html",
+    "frontend/src/App.tsx",
+    "frontend/src/features/history/HistoryPanel.tsx",
+    "frontend/src/features/history/historyStore.ts",
+    "frontend/src/features/history/useHistory.ts",
+    "frontend/src/features/typing/TypingPractice.tsx",
+    "frontend/src/features/typing/components/DurationSelector.tsx",
+    "frontend/src/features/typing/components/PassageDisplay.tsx",
+    "frontend/src/features/typing/components/ResultsSummary.tsx",
+    "frontend/src/features/typing/components/StatsBar.tsx",
+    "frontend/src/features/typing/unicode.ts",
+    "frontend/src/features/typing/usePassage.ts",
+    "frontend/src/features/typing/useTypingEngine.ts",
+    "frontend/src/hooks/useActor.ts",
+    "frontend/src/hooks/useInternetIdentity.ts",
+    "frontend/src/hooks/useQueries.ts",
+    "frontend/src/index.css",
+    "frontend/src/main.tsx",
+    "frontend/src/services/passages.ts",
+    "frontend/src/services/sessions.ts",
+    "frontend/tailwind.config.js",
+    "project_state.json"
+  ]
+}
